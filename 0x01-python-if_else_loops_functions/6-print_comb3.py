@@ -5,4 +5,3 @@ for i in range(0, 9):
             print("89")
         else:
             print("{:d}{:d}".format(i, j), end=", ")
-
