@@ -2,19 +2,21 @@
 import random
 number = random.randint(-10000, 10000)
 flag = 0
+str = "Last digit of"
+str5 = "and is greater than 5"
+str0 = "and is 0"
+str6 = "and is less than 6 and not 0"
+
 if number < 0:
     flag = 1
     number = number * -1
-last_digit = number % 10
+digit = number % 10
 if flag:
-    last_digit = last_digit * -1
+    digit = digit * -1
     number = number * -1
-if last_digit > 5:
-    print(("Last digit of is {:d} and is greater" +
-    " than 5").format(number, last_digit))
-elif last_digit == 0:
-    print(("Last digit of {:d} is {:d} and" +
-    "is 0").format(number, last_digit))
+if digit > 5:
+    print("{} {:d} is {:d} {}".format(str, number, digit, str5))
+elif digit == 0:
+    print("{} {:d} is {:d} {}".format(str, number, digit, str0))
 else:
-    print(("Last digit of {:d} is {:d} and is less" +
-    " than 6 and not 0").format(number, last_digit))
+    print("{} {:d} is {:d} {}".format(str, number, digit, str6))
