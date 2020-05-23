@@ -1,0 +1,45 @@
+TDD project - Test
+======================
+
+Using ``add_integer``
+-------------------
+
+This is the text file for testing
+``add_integer``
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+    
+cases:   
+
+    >>> add_integer(4, 4)
+    8
+
+    >>> add_integer(4.4 , 5)
+    9
+    
+    >>> add_integer(0)
+    98
+
+    >>> add_integer("str")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(4, 4, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+
+
