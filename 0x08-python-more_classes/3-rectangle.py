@@ -71,7 +71,7 @@ class Rectangle:
         returns the rectangle with the character #
         """
         rect_str = ""
-        if self.__width != 0 or self.__height != 0:
+        if self.__width != 0 and self.__height != 0:
             rect_str = (("#" * self.width + "\n") * (self.height - 1))
             rect_str += "#" * self.width
         return rect_str
