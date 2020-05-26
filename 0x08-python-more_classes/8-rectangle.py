@@ -98,6 +98,11 @@ class Rectangle:
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     def bigger_or_equal(rect_1, rect_2):
+        """
+        returns the bigger rectangle
+        if both have the same area value rect_1 is returned
+        """
+
         if isinstance(rect_1, Rectangle):
             if isinstance(rect_2, Rectangle):
                 if rect_1.area() >= rect_2.area():
