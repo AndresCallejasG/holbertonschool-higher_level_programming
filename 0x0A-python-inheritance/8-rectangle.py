@@ -14,8 +14,8 @@ class Rectangle(BaseGeometry):
         """init method
 
         Arguments:
-            width {[type]} -- Rentangle width
-            height {[type]} -- Rentangle height
+            width {[type]} -- Rectangle width
+            height {[type]} -- Rectangle height
         """
         super().integer_validator("width", width)
         self.__width = width
