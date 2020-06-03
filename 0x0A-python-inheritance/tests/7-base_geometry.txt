@@ -37,25 +37,25 @@ Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> base_g.integer_validator("var", {})
+>>> base_g.integer_validator("name", {})
 Traceback (most recent call last):
     ...
-TypeError: var must be an integer
+TypeError: name must be an integer
  
->>> base_g.integer_validator("var", 0.44)
+>>> base_g.integer_validator("name", 0.44)
 Traceback (most recent call last):
     ...
-TypeError: var must be an integer
+TypeError: name must be an integer
 
->>> base_g.integer_validator("var", True)
+>>> base_g.integer_validator("name", True)
 Traceback (most recent call last):
     ...
-TypeError: var must be an integer
+TypeError: name must be an integer
 
->>> base_g.integer_validator("var", None)
+>>> base_g.integer_validator("name", None)
 Traceback (most recent call last):
     ...
-TypeError: var must be an integer
+TypeError: name must be an integer
 
 >>> base_g.integer_validator("name", [])
 Traceback (most recent call last):
