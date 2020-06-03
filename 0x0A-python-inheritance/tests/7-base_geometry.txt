@@ -57,6 +57,11 @@ Traceback (most recent call last):
     ...
 TypeError: var must be an integer
 
+>>> base_g.integer_validator("name", [])
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
 ---> documentation 
 
 >>> module_doc = __import__('7-base_geometry').__doc__
