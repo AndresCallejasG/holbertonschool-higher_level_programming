@@ -37,6 +37,26 @@ Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+>>> base_g.integer_validator("var", {})
+Traceback (most recent call last):
+    ...
+TypeError: var must be an integer
+ 
+>>> base_g.integer_validator("var", 0.44)
+Traceback (most recent call last):
+    ...
+TypeError: var must be an integer
+
+>>> base_g.integer_validator("var", True)
+Traceback (most recent call last):
+    ...
+TypeError: var must be an integer
+
+>>> base_g.integer_validator("var", None)
+Traceback (most recent call last):
+    ...
+TypeError: var must be an integer
+
 ---> documentation 
 
 >>> module_doc = __import__('7-base_geometry').__doc__
