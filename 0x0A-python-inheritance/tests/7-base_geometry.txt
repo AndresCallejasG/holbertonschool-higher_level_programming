@@ -30,13 +30,6 @@ Traceback (most recent call last):
     ...
 TypeError: day must be an integer
 
----> not arguments passed
-
->>> base_g.integer_validator()
-Traceback (most recent call last):
-    ...
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
 >>> base_g.integer_validator("name", {})
 Traceback (most recent call last):
     ...
@@ -62,11 +55,19 @@ Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
+---> not arguments passed
+
+>>> base_g.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 ---> documentation 
 
 >>> module_doc = __import__('7-base_geometry').__doc__
 >>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
->>> fnc_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> int_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> area_doc = __import__('7-base_geometry').BaseGeometry.area.__doc__
 
 
 >>> len(module_doc) > 0
@@ -75,5 +76,8 @@ True
 >>> len(class_doc) > 0
 True
 
->>> len(fnc_doc) > 0
+>>> len(int_doc) > 0
+True
+
+>>> len(area_doc) > 0
 True
