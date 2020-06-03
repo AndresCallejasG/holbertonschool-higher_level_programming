@@ -1,0 +1,54 @@
+TDD project - Test
+======================
+
+Test cases for integer_validator
+-------------------
+
+This is the text file for testing
+``integer_validator``
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+    
+cases:
+
+>>> base_g = BaseGeometry()
+>>> base_g.integer_validator("int", 44)
+>>> base_g.integer_validator("height", 44)
+
+
+--> not an int
+
+>>> base_g.integer_validator("day", "sunday")
+Traceback (most recent call last):
+    ...
+TypeError: day must be an integer
+
+
+>>> base_g.integer_validator("day", ())
+Traceback (most recent call last):
+    ...
+TypeError: day must be an integer
+
+---> not arguments passed
+
+>>> base_g.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+---> documentation 
+
+>>> module_doc = __import__('7-base_geometry').__doc__
+>>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> fnc_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+
+
+>>> len(module_doc) > 0
+True
+
+>>> len(class_doc) > 0
+True
+
+>>> len(fnc_doc) > 0
+True
