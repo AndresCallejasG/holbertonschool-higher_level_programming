@@ -99,3 +99,13 @@ class Rectangle(Base):
         """ function area
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+            returns the rectangle with the character #
+        """
+        symbol = "#"
+        rect_str = ""
+        rect_str = ((symbol * self.__width + "\n") * (self.__height - 1))
+        rect_str += symbol * self.__width
+        print(rect_str)
