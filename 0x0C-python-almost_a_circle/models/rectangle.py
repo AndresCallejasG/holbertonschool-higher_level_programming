@@ -109,3 +109,11 @@ class Rectangle(Base):
         rect_str = ((symbol * self.__width + "\n") * (self.__height - 1))
         rect_str += symbol * self.__width
         print(rect_str)
+
+    def __str__(self):
+        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        string = "[Rectangle]"
+        string += " ({:d}) {:d}/{:d} ".format(self.id, self.__x, self.__y)
+        string += "- {:d}/{:d}".format(self.__width, self.__height)
+        return string
