@@ -24,6 +24,20 @@ class Square(Rectangle):
         """
         Rectangle.__init__(self, size, size, x, y, id)
 
+    @property
+    def size(self):
+        """size getter - uses width
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ size.setter
+            same value validation as the Rectangle for width and height
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """ returns [Square] (<id>) <x>/<y> - <size>
         """
