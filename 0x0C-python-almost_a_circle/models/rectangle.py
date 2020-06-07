@@ -149,3 +149,17 @@ class Rectangle(Base):
                     self.__x = v
                 if k == "y":
                     self.__y = v
+
+    def to_dictionary(self):
+        """ returns the Rectangle's dictionary representation
+            alternatives:
+                vars(self)
+                self.__dict__
+
+        Returns:
+            dict: dictionary representation of a Rectangle
+        """
+        my_dict = {}
+        for attr in ["id", "width", "height", "x", "y"]:
+            my_dict.update({attr: getattr(self, attr)})
+        return my_dict
