@@ -104,11 +104,10 @@ class Rectangle(Base):
         """
             returns the rectangle with the character #
         """
-        symbol = "#"
-        rect_str = ""
-        rect_str = ((symbol * self.__width + "\n") * (self.__height - 1))
-        rect_str += symbol * self.__width
-        print(rect_str)
+        for i in range(self.__y):
+            print()
+        for j in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
