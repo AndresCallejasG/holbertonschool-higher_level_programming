@@ -99,7 +99,7 @@ class Base():
                 The type of these instances depends on cls
 
         """
-        with open(cls.__name__ + ".json", mode="r") as f:
+        with open(cls.__name__ + ".json", "r") as f:
             data = f.read()
             data = cls.from_json_string(data)
         return [cls.create(**elem) for elem in data]
