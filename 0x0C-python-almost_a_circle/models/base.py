@@ -99,7 +99,6 @@ class Base():
                 The type of these instances depends on cls
 
         """
-        array = []
         with open(cls.__name__ + ".json", mode="r") as f:
             data = f.read()
             data = cls.from_json_string(data)
