@@ -73,3 +73,34 @@ class Base():
         if json_string and len(json_string) > 0:
             return json.loads(json_string)
         return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ uses the update method to assign all attributes
+            returns an instance with all attributes already set
+
+        Returns:
+            new_object (cls): instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            new_obj = cls(1, 1)
+        else:
+            new_obj = cls(1)
+        new_obj.update(**dictionary)
+        return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances from a file
+
+        Returns:
+                If the file doesn’t exist, return an empty list
+                Otherwise, return a list of instances.
+                The type of these instances depends on cls
+
+        """
+        array = []
+        with open(cls.__name__ + ".json", mode="r") as f:
+            data = f.read()
+            data = cls.from_json_string(data)
+        return [cls.create(**elem) for elem in data]
