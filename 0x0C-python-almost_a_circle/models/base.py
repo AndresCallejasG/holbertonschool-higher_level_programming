@@ -52,7 +52,7 @@ class Base():
             list_objs: a list of instances who inherits of Base
         """
         dic = []
-        if list_objs:
+        if list_objs and len(list_objs) > 0:
             for obj in list_objs:
                 dic.append(obj.to_dictionary())
         with open(cls.__name__ + ".json", "w") as f:
