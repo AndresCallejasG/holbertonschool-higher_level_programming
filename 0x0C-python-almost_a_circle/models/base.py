@@ -5,6 +5,7 @@
 
 
 import json
+import csv
 
 
 class Base():
@@ -106,3 +107,31 @@ class Base():
             return [cls.create(**elem) for elem in data]
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes list_objs in CSV file
+        """
+        dict_list = [obj.to_dictionary() for obj in list_objs]
+        with open(cls.__name__ + ".csv", "w") as file:
+            write = csv.DictWriter(file, dict_list[0].keys())
+            write.writeheader()
+            write.writerows(dict_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes from CSV file
+        """
+        try:
+            list_objs = []
+            dictionary = {}
+            with open(cls.__name__ + ".csv", "r") as file:
+                csv_text = csv.DictReader(file)
+                for elem in csv_text:
+                    for k, v in dict(elem).items():
+                        dictionary[k] = int(v)
+                    list_objs.append(cls.create(**dictionary))
+        except:
+            pass
+        finally:
+            return list_objs
