@@ -11,7 +11,7 @@ import pep8
 
 
 class TestBase(unittest.TestCase):
-    """ Test cases for base.py
+    """ Test cases for rectangle.py
 
     """
     @classmethod
@@ -61,7 +61,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Rectangle(2, 10).id, 2)
 
     def test_init_excep(self):
-        """ Tests raise exeption with less than 2 arguments
+        """ Tests raise exception with less than 2 arguments
         """
         with self.assertRaises(TypeError) as e:
             Rectangle(32)

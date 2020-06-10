@@ -55,7 +55,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Square(3, 1, 3).id, 2)
 
     def test_init_excep(self):
-        """ Tests raise exeption without size
+        """ Tests raise exception without size
         """
         with self.assertRaises(TypeError) as e:
             Square()
