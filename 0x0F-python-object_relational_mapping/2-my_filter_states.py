@@ -22,11 +22,12 @@ if __name__ == "__main__":
                          user=my_user, passwd=my_passwd, db=my_database)
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(name))
+    cur.execute("SELECT * FROM states WHERE name ='{}'".format(name))
     rows = cur.fetchall()
 
     for state in rows:
-        print(state)
+        if state[1] == name:
+            print(state)
 
     cur.close()
     db.close()
