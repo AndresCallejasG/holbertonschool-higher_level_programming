@@ -10,8 +10,6 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    """ First state
-    """
     my_host = 'localhost'
     my_port = 3306
     my_user = sys.argv[1]
