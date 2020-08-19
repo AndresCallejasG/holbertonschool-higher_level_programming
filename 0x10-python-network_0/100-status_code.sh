@@ -1,3 +1,3 @@
 #!/bin/bash
-# sends a POST request to the passed URL. Variable email and subject. Displays the body of the response
-curl -sI -o /dev/null-X POST -w "%{http_code}" "$1" 
+#sends a request to a URL passed as an argument, and displays only the status code of the response.
+curl -sI -o /dev/null -X POST -w "%{http_code}" "$1" 
