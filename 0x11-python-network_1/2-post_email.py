@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-    takes in a URL, sends a request to the URL
-    and displays the value of the X-Request-Id
+    takes in a URL and an email, sends a POST request
+    to the passed URL with the email as a parameter,
+    and displays the body of the response
 """
 from urllib import request, parse
 import sys
