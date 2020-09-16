@@ -9,10 +9,7 @@ if (isNaN(process.argv[2])) {
 } else {
   const size = parseInt(process.argv[2]);
   for (let i = 0; i < size; i++) {
-    let line = '';
-    for (let j = 0; j < size; j++) {
-      line += 'X';
-    }
-    console.log(line);
+    const line = 'X';
+    console.log(line.repeat(size));
   }
 }
